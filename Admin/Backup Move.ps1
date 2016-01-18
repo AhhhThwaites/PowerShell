@@ -9,7 +9,7 @@
 #Variables
 $Now = Get-Date
 $Days = "5"
-$TargetFolder = "C:\A-DBA\Snapshots\Archive\"
+$TargetFolder = "C:\A-Copy\A-DBA\Snapshots\Archive\"
 $Extension = "*.snp"
 
 #define LastWriteTime parameter based on $Days
@@ -31,17 +31,3 @@ foreach ($File in $Files)
         Write-Host "No more files to delete!" #-foregroundcolor "Green"
         }
     }
-# 
-# Start-Sleep -s 10
-# 
-# $files = get-childitem -path "L:\LIVEBAK\*.sqb"
-# 
-# foreach ($File in $files)
-#     {
-#         $File
-#         copy-item $File "L:\LIVEBAK\LateroomsLiveBackups\"
-#     }
-
-
-
-
