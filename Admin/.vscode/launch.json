@@ -5,7 +5,8 @@
 			"name": "PowerShell",
 			"type": "PowerShell",
 			"request": "launch",
-			"program": "Backup Move.ps1"
+			//"program": "CPUInfoDev.ps1"
+            "program": "${file}"
 		}
 	]
 }
