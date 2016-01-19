@@ -5,8 +5,7 @@
 			"name": "PowerShell",
 			"type": "PowerShell",
 			"request": "launch",
-			//"program": "CPUInfoDev.ps1"
-            "program": "${file}"
+            "program": "${workspaceRoot}/${file}"
 		}
 	]
 }

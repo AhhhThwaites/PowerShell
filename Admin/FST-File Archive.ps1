@@ -1,7 +1,7 @@
 ﻿<#
-    
-    File: Backup Move.ps1
-    Desc: Script to move and delete backups older than x days
+    Type: File System Task  
+    File: FST-File Archive.ps1
+    Desc: Script to move and delete files older than n days
     Date: 18/01/2016  
     
 #>
@@ -9,7 +9,7 @@
 #Variables
 $Now = Get-Date
 $Days = "5"
-$TargetFolder = "C:\A-Copy\A-DBA\Snapshots\Archive\"
+$TargetFolder = "D:\SVN\Development\"
 $Extension = "*.snp"
 
 #define LastWriteTime parameter based on $Days
