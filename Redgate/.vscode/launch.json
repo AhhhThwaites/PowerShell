@@ -1,0 +1,11 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "PS: Redgate SnapShots",
+			"type": "PowerShell",
+			"request": "launch",
+            "program": "${workspaceRoot}/Redgate Compare Snapshots.ps1"
+		}
+	]
+}

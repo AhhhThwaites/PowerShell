@@ -1,22 +1,19 @@
 <#
-    
-    File: Redgate-SnapShots.ps1
-    Desc: Creates Redgate software compatible snaphots
+    File: Redgate Compare Snapshots.ps1
+    Desc: Creates Redgate software compatible snaphots & archives.
     Date: 18/01/2016  
-    
 #>
 
+#Variables required.
 $RedGateDIR = "C:\program files (x86)\red gate\SQL compare 10\"
-
-$strTgtDBName = "DatabaseName"
-$strTgtDIR = "C:\A-DBA\Snapshots\"
+$strTgtDBName = "Laterooms"
+$strTgtDIR = "D:\RedgateSnapshot\"
 $strDate = (get-date).ToString('dMMyyyy')
 
+#Setup server array here
 $srvArray=@()
-$srvArray+="SRV01"
-$srvArray+="SRV02"
-$srvArray+="SRV03"
-$srvArray+="SRV04"
+$srvArray+="DEV"
+$srvArray+="TEST"
 
 #set working DIR
 Set-Location -Path $RedGateDIR
@@ -33,10 +30,9 @@ foreach ($strServer in $srvArray)
     {
         $strTgtDIRFull = """"+$strTgtDIR+$strServer+"-"+$strDate+".snp"+""""
         
-        write-host ".\SQLCompare.exe /Server1:$strServer /Database1:$strTgtDBName /MakeSnapshot:$strTgtDIRFull"
+        #write-host ".\SQLCompare.exe /Server1:$strServer /Database1:$strTgtDBName /MakeSnapshot:$strTgtDIRFull"
         $exec = .\SQLCompare.exe /Server1:$strServer /Database1:$strTgtDBName /MakeSnapshot:$strTgtDIRFull
     }
-
 
 #archive
 $filelist = get-childitem -Path $strTgtDIR"\Archive\"
@@ -50,7 +46,7 @@ foreach ($file in $filelist)
             {
                 if ((($file.CreationTime).Day) -gt 1) 
                 {
-                    Write-Host $file.FullName
+                    #Write-Host $file.FullName
                     Remove-Item -Path $file.FullName
                 }
             }
