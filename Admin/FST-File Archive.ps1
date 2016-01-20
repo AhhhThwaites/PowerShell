@@ -9,8 +9,9 @@
 #Variables
 $Now = Get-Date
 $Days = "5"
-$TargetFolder = "D:\SVN\Development\"
-$Extension = "*.snp"
+$TargetFolder = "D:\A-Copy\"
+$Extension = "*.ps1"
+$Debug = "1"
 
 #define LastWriteTime parameter based on $Days
 $LastWrite = $Now.AddDays(-$Days)
@@ -23,11 +24,18 @@ foreach ($File in $Files)
     {
     if ($File -ne $NULL)
         {
-        write-host "Deleting File $File" #-ForegroundColor "DarkRed"
-        #Remove-Item $File.FullName | out-null
+        if ($Debug -eq 0)
+            {
+                write-host "Deleting File $File" -ForegroundColor "DarkRed"
+                Remove-Item $File.FullName | out-null
+            }
+            else
+            {
+                Write-Host "DEBUG MODE: "($File).FullName"" -ForegroundColor "Green"
+            }
         }
     else
         {
-        Write-Host "No more files to delete!" #-foregroundcolor "Green"
+        Write-Host "No files found to delete!" -foregroundcolor "Red"
         }
     }

@@ -2,10 +2,17 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "PowerShell",
+			"name": "PS: FST-File Archive",
 			"type": "PowerShell",
 			"request": "launch",
-            "program": "${workspaceRoot}/${file}"
+            "program": "${workspaceRoot}/FST-File Archive.ps1"
+		}
+        ,
+        {
+			"name": "PS: SI-CPU Info",
+			"type": "PowerShell",
+			"request": "launch",
+            "program": "${workspaceRoot}/SI-CPU Info.ps1"
 		}
 	]
 }
