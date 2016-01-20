@@ -1,0 +1,18 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "PS: File Archive",
+			"type": "PowerShell",
+			"request": "launch",
+            "program": "${workspaceRoot}/File Archive.ps1"
+		}
+        ,
+        {
+			"name": "PS: File Size Summary",
+			"type": "PowerShell",
+			"request": "launch",
+            "program": "${workspaceRoot}/File Size Summary.ps1"
+		}
+	]
+}

@@ -1,9 +1,8 @@
 ﻿<#
     Type: File System Task  
-    File: FST-File Archive.ps1
+    File: File Archive.ps1
     Desc: Script to move and delete files older than n days
     Date: 18/01/2016  
-    
 #>
 
 #Variables
