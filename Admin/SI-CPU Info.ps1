@@ -1,6 +1,10 @@
-﻿#param([string]$SQLServerList=$(Throw `
-#"Paramater missing: -SQLServerList ConfigGroup"))
-clear
+﻿<#
+    Type: Server Insight
+    File: SI-CPU Info.ps1
+    Desc: PowerShell function written to accept a list of machines, outputs CPU info
+    Date: 19/01/2016  
+    
+#>
 
 Function Get-CPUInfo{
     [CmdletBinding()]
@@ -38,13 +42,12 @@ Function Get-CPUInfo{
           }
 }
 
-
+#Machine list below, could make this a script param...
 $srvArray=@()
 $srvArray+="DBDEV01"
 $srvArray+="DBTEST01"
 $srvArray+="SQLTEST01"
 $srvArray+="SCRATCH-A"
 
-
 #loop through the server list and get information about CPUs, Cores and Default instance edition
-$srvArray | Foreach-Object {Get-CPUInfo $_ } | Out-GridView
+$srvArray | Foreach-Object {Get-CPUInfo $_ } | format-table -AutoSize
