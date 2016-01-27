@@ -1,0 +1,11 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+        {
+			"name": "PS: Index Information",
+			"type": "PowerShell",
+			"request": "launch",
+            "program": "${workspaceRoot}/Script Database Definition.ps1"
+		}
+	]
+}
