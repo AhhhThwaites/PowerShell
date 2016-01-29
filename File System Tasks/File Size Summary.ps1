@@ -5,9 +5,16 @@
     Date: 20/01/2016  
 #>
 
-function funcListDIR 
-	{param ($strTargetDIR, $strOutputDIR, [bool]$isRecursive)
-		if ($isRecursive -eq $true)
+param 
+(
+    [string]$strTargetDIR = "D:\Workspace Temp\"
+    ,[string]$strOutputDIR = "D:\Workspace Temp\output.csv"
+    ,[bool]$boolRecursive = $false
+)
+
+begin
+    {
+        if ($boolRecursive -eq $true)
             {
                 $files = get-childitem -path $strTargetDIR -rec | where {$_.mode -ne "d----"}
             }
@@ -24,12 +31,4 @@ function funcListDIR
                         ,@{Name="Mbytes";Expression={$_.Length / 1Mb}} `
                         ,Directory `
                         | Export-Csv -path $strOutputDIR -NoTypeInformation
-	}
-
-<#
-    Examples:
-        funcListDIR "C:\A-DBA\" "C:\A-DBA\Output.csv", 0
-        funcListDIR "D:\SVN\Development\" "D:\Output.csv", 1
-#>
-
-funcListDIR "D:\SVN\Developement\Laterooms\" "D:\Output.csv" $false
+    }
