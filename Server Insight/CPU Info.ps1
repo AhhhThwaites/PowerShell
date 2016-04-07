@@ -43,8 +43,8 @@ Function Get-CPUInfo{
 
 #Machine list below, could make this a script param...
 $srvArray=@()
-$srvArray+="DBDEV01"
-$srvArray+="DBTEST01"
+$srvArray+="DBSRV01"
+$srvArray+="DBSRV02"
 $srvArray+=$env:COMPUTERNAME
 
 #loop through the server list and get information about CPUs, Cores and Default instance edition
