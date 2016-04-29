@@ -1,4 +1,4 @@
-<h1>Upload Files.ps1</h1> 
+<b>Upload Files.ps1</b><br>
 Note this requires that a key and profile be setup within AWS, this is a pre-requisit of running this script. To run this script you will also need to download the SDK for AWS coding.
 
 <br><b>Links</b> <br> 
