@@ -2,10 +2,10 @@
 	"version": "0.2.0",
 	"configurations": [
         {
-			"name": "PS: Index Information",
+			"name": "PS: AWS Upload",
 			"type": "PowerShell",
 			"request": "launch",
-            "program": "${workspaceRoot}/Script Database Definition.ps1"
+            "program": "${workspaceRoot}/Upload Files.ps1"
 		}
 	]
 }
